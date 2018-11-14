@@ -74,4 +74,30 @@ def kansen_top_5():
     return kansen
 
 
+def kansen_lootjes():
+    lootjes = 0.0
+    for i in range(1, len(disputen)):
+        lootjes += disputen[i][1]['lootjes']
+
+    # Winnende dispuut mag niet meeloten
+    kansen = {}
+    kansen[disputen[0][0]] = 0.0
+
+    for i in range(1, 5):
+        l = range(1, 5)
+        l.remove(i)
+        kansen[disputen[i][0]] = 0.0
+        for j in l:
+            kansen[disputen[i][0]] += disputen[i][1]['lootjes'] \
+                / (4 * (lootjes - disputen[j][1]['lootjes']))
+
+    for i in range(5, len(disputen)):
+        kansen[disputen[i][0]] = 0.0
+        for j in range(1, 5):
+            kansen[disputen[i][0]] += disputen[i][1]['lootjes'] \
+                / (4 * (lootjes - disputen[j][1]['lootjes']))
+
+    return kansen
+
+
 from_site = len(sys.argv) >= 2 and sys.argv[1] == '1'
