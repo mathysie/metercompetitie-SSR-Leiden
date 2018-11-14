@@ -64,4 +64,14 @@ def kansen_winnaar():
     return kansen
 
 
+def kansen_top_5():
+    kansen = {}
+    kansen[disputen[0][0]] = 0.0
+
+    for i in range(1, len(disputen)):
+        kansen[disputen[i][0]] = 0.25 if i < 5 else 0.0
+
+    return kansen
+
+
 from_site = len(sys.argv) >= 2 and sys.argv[1] == '1'
