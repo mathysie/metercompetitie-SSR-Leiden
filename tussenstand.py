@@ -100,4 +100,17 @@ def kansen_lootjes():
     return kansen
 
 
+def kansen_totaal():
+    kansen = {}
+    winnaar = kansen_winnaar()
+    top_5 = kansen_top_5()
+    lootjes = kansen_lootjes()
+
+    for dispuut in disputen:
+        kansen[dispuut[0]] = winnaar[dispuut[0]] + top_5[dispuut[0]] \
+            + lootjes[dispuut[0]]
+
+    return kansen
+
+
 from_site = len(sys.argv) >= 2 and sys.argv[1] == '1'
