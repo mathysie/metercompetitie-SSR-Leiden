@@ -1,6 +1,17 @@
+#!/usr/bin/env python
+
+"""tussenstand.py: Berekent de kansen op een fust voor elk dispuut."""
+
 import requests
 import re
 import sys
+
+__author__ = "Mathijs Kolkhuis Tanke"
+__credits__ = ["Joost van Someren"]
+__license__ = "MIT"
+__version__ = "1.0"
+__email__ = "mathijs@kolkhuistanke.nl"
+__status__ = "Production"
 
 bestuur = 'Blijf Genieten'
 website = 'https://metercompetitie.ssr-leiden.nl/'
