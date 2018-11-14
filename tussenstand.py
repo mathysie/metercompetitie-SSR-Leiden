@@ -118,7 +118,7 @@ def output():
     waarden = sorted(kansen.iteritems(), key=lambda k: k[1], reverse=True)
 
     for waarde in waarden:
-        string += '\t{0}: {1:.1f}\n'.format(waarde[0], waarde[1] * 100)
+        string += '\t{0}: {1:.1f}%\n'.format(waarde[0], waarde[1] * 100)
 
     print(string)
     return
