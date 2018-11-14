@@ -54,4 +54,14 @@ def parse_disputen():
     return disputen
 
 
+def kansen_winnaar():
+    kansen = {}
+    kansen[disputen[0][0]] = 1.0
+
+    for i in range(1, len(disputen)):
+        kansen[disputen[i][0]] = 0.0
+
+    return kansen
+
+
 from_site = len(sys.argv) >= 2 and sys.argv[1] == '1'
