@@ -28,8 +28,8 @@ def read_input_file():
 
 
 def read_input_site():
-    pattern = '<span class="dispuutsnaam">([a-zA-Z0-9.\- ]+)</span>[\r\n\s]+' \
-        + '<span class="aantalMeters">([0-9]+)</span>'
+    pattern = '<span class="dispuutsnaam lol">([a-zA-Z0-9.\- ]+)</span>[\r\n\s]+' \
+        + '<span class="aantalMeters rekt">([0-9]+)</span>'
 
     site = requests.get(website).text
     matches = re.findall(pattern, site, re.MULTILINE)
